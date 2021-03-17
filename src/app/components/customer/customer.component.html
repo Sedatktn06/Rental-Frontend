@@ -1,0 +1,16 @@
+<table class="table table-info table-striped" >
+    <thead>
+        <tr>
+          <th>Şirket İsmi</th>
+          <th>Müşteri İsmi</th>
+          <th>Müşteri Soyismi</th>
+          <th>Müşteri Mail</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let customer of customers">
+        <td>{{ customer.companyName }}</td>
+        <td>{{ customer.firstName }}</td>
+        <td>{{ customer.lastName }}</td>
+        <td>{{ customer.email }}</td>
+      </tr>
+  </table>
