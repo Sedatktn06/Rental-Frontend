@@ -1,4 +1,4 @@
-<select class="form-select" aria-label="Default select example" style="text-align: center; background-color:rgb(128, 198, 219)">
-  <option selected>Markalar</option>
-  <option *ngFor="let brand of brands" value="1">{{brand.brandName}}</option>
-</select>
+<ul class="Markalar">
+
+  <li class="list-group-item list-group-item-info" *ngFor="let brand of brands" >{{brand.brandName}}</li>
+</ul>

@@ -3,7 +3,7 @@
   </div>
 
 
-<table class="table table-info table-striped" >
+<!-- <table class="table table-striped" >
     <thead>
         <tr>
           <th>Araba İsmi</th>
@@ -18,4 +18,21 @@
         <td>{{ car.colorName }}</td>
         <td>{{ car.dailyPrice }}</td>
       </tr>
-  </table>
+  </table> -->
+
+  <table *ngIf="dataLoaded == true" class="table" > 
+    <thead>
+      <tr>
+        <th class="p-3 mb-2 bg-light text-dark">Araba İsmi&nbsp;&nbsp;</th>
+        <th class="p-3 mb-2 bg-info text-dark">Araba Markası&nbsp;&nbsp;</th>
+        <th class="p-3 mb-2 bg-light text-dark">Araba Rengi</th>
+        <th class="p-3 mb-2 bg-info text-dark">Günlük Ücret</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let car of cars">
+      <td class="p-3 mb-2 bg-light text-dark">&nbsp;{{ car.carName }}</td>
+      <td class="p-3 mb-2 bg-info text-dark">&nbsp;&nbsp;{{ car.brandName }}</td>
+      <td class="p-3 mb-2 bg-light text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ car.colorName }}</td>
+      <td class="p-3 mb-2 bg-info text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ car.dailyPrice }}</td>
+    </tr>
+  </table> 

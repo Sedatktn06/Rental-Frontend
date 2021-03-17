@@ -1,4 +1,4 @@
-<table class="table table-info table-striped" >
+<!-- <table class="table table-info table-striped" >
     <thead>
         <tr>
           <th>Şirket İsmi</th>
@@ -13,4 +13,21 @@
         <td>{{ customer.lastName }}</td>
         <td>{{ customer.email }}</td>
       </tr>
-  </table>
+  </table> -->
+
+  <table  class="table" > 
+    <thead>
+      <tr>
+        <th class="p-3 mb-2 bg-light text-dark">Şirket İsmi&nbsp;&nbsp;</th>
+        <th class="p-3 mb-2 bg-info text-dark">Müşteri İsmi&nbsp;&nbsp;</th>
+        <th class="p-3 mb-2 bg-light text-dark">Müşteri Soyismi</th>
+        <th class="p-3 mb-2 bg-info text-dark">Müşteri Mail</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let customer of customers">
+      <td class="p-3 mb-2 bg-light text-dark">&nbsp;{{ customer.companyName }}</td>
+      <td class="p-3 mb-2 bg-info text-dark">&nbsp;&nbsp;{{ customer.firstName }}</td>
+      <td class="p-3 mb-2 bg-light text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ customer.lastName }}</td>
+      <td class="p-3 mb-2 bg-info text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ customer.email }}</td>
+    </tr>
+  </table> 

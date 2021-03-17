@@ -1,4 +1,4 @@
-<table class="table table-info table-striped" >
+<!-- <table class="table table-info table-striped" >
     <thead>
         <tr>
           <th>Araba Markası</th>
@@ -17,4 +17,25 @@
         <td>{{ rental.rentDate }}</td>
         <td>{{ rental.returnDate }}</td>
       </tr>
-  </table>
+  </table> -->
+
+  <table  class="table" > 
+    <thead>
+      <tr>
+        <th class="p-3 mb-2 bg-light text-dark">Araba Markası&nbsp;&nbsp;</th>
+        <th class="p-3 mb-2 bg-info text-dark">Müşteri Adı&nbsp;&nbsp;</th>
+        <th class="p-3 mb-2 bg-light text-dark">Müşteri Soyadı</th>
+        <th class="p-3 mb-2 bg-info text-dark">Şirket İsmi</th>
+        <th class="p-3 mb-2 bg-light text-dark">Kiralama Tarihi</th>
+        <th class="p-3 mb-2 bg-info text-dark">Kiralama Teslim Tarihi</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let rental of rentals">
+      <td class="p-3 mb-2 bg-light text-dark">&nbsp;{{ rental.brandName }}</td>
+      <td class="p-3 mb-2 bg-info text-dark">&nbsp;&nbsp;{{ rental.firstName }}</td>
+      <td class="p-3 mb-2 bg-light text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rental.lastName  }}</td>
+      <td class="p-3 mb-2 bg-info text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rental.companyName  }}</td>
+      <td class="p-3 mb-2 bg-light text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rental.rentDate }}</td>
+      <td class="p-3 mb-2 bg-info text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rental.returnDate }}</td>
+    </tr>
+  </table> 
