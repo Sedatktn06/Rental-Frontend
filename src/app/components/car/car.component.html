@@ -1,9 +1,12 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
+<!-- <div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-primary"
+  role="status"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
 
-
-<!-- <table class="table table-striped" >
+<table class="table table-striped" >
     <thead>
         <tr>
           <th>Araba İsmi</th>
@@ -18,9 +21,9 @@
         <td>{{ car.colorName }}</td>
         <td>{{ car.dailyPrice }}</td>
       </tr>
-  </table> -->
+  </table>  -->
 
-  <table *ngIf="dataLoaded == true" class="table" > 
+ <!-- <table *ngIf="dataLoaded == true" class="table" > 
     <thead>
       <tr>
         <th class="p-3 mb-2 bg-light text-dark">Araba İsmi&nbsp;&nbsp;</th>
@@ -29,10 +32,116 @@
         <th class="p-3 mb-2 bg-info text-dark">Günlük Ücret</th>
       </tr>
     </thead>
-    <tr *ngFor="let car of cars">
+    <tr 
+    *ngFor="let car of cars"
+    >
       <td class="p-3 mb-2 bg-light text-dark">&nbsp;{{ car.carName }}</td>
       <td class="p-3 mb-2 bg-info text-dark">&nbsp;&nbsp;{{ car.brandName }}</td>
       <td class="p-3 mb-2 bg-light text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ car.colorName }}</td>
       <td class="p-3 mb-2 bg-info text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ car.dailyPrice }}</td>
+      <button  routerLink="/cars/car-detail/{{car.carId}}" type="button" class="btn btn-primary">Detay</button>
     </tr>
-  </table> 
+  </table>   -->
+ <!--
+<div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-primary"
+  role="status"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<table *ngIf="dataLoaded == true" class="table table-dark table-striped">
+  <thead class="table-dark">
+    <caption
+      (click)="setCurrentAllCar()"
+      [class]="getCurrentAllCarClass()"
+      routerLink="/cars"
+      class="p-3 mb-2 bg-dark bg-gradient text-info bg-dark"
+    >
+      Car List
+    </caption> 
+    <tr>
+      <th>Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th>Brand&nbsp;&nbsp;</th>
+      <th>Color&nbsp;&nbsp;</th>
+      <th>Model Year</th>
+      <th>Daily Price</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let car of cars">
+    <td class="p-3 mb-2 bg-dark text-white">&nbsp;{{ car.carId }}</td>
+    <td class="p-3 mb-2 bg-dark text-white">{{ car.brandName }}</td>
+    <td class="p-3 mb-2 bg-dark text-white">{{ car.colorName }}</td>
+    <td class="p-3 mb-2 bg-dark text-white">{{ car.modelYear }}</td>
+    <td class="p-3 mb-2 bg-dark text-white">{{ car.dailyPrice }} ₺</td>
+    <td class="p-3 mb-2 bg-dark text-white">{{ car.description }}</td>
+    <td>
+      <button
+        routerLink="/cars/cardetail/{{ car.carId }}"
+        style="text-align: right"
+        class="btn btn-primary"
+      > 
+        Details
+      </button>
+    </td> 
+    
+    <a
+      routerLink="/cars/cardetail/{{ car.carId }}"
+      class="btn btn-dark text-center"
+      >Details</a
+    >
+  </tr>
+</table>
+
+ div class="card-group">
+  <div class="row row-cols-1 row-cols-md-3">
+    <div class="col">
+       routerLink="/cars/cardetail/{{ car.carId }}" 
+      <div class="card-group">
+        <div
+          *ngFor="let carimage of carImages"
+          class="card"
+          style="width: 18rem"
+        >
+          <img
+            src="https://localhost:44359{{ carimage.imagePath }}"
+            class="card-img-top"
+            alt="random"
+          />
+          <div *ngFor="let car of cars" class="card-body">
+            <h5 class="card-title">{{ car.description }}</h5>
+            <p class="card-text">{{ car.dailyPrice }} ₺</p>
+            <button style="text-align: right" class="btn btn-primary">
+              Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+
+
+ <div class="row ml-0 mr-0">
+  <div *ngFor="let car of cars " class="col-md-3 my-3">
+      <div  class="card text-white bg-dark mb-3" style="width: 100%;">
+          <img src="{{carImageBasePath}}{{getCarImage(car)}}" class="card-img-top" alt="Araba Resmi">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{car.carName}}</h5>
+            <hr>
+            <p> <b>Marka :</b> {{car.brandName}} </p>
+            <hr>
+            <p> <b>Model Yılı :</b> {{car.modelYear }} </p>
+            <hr>
+            <p> <b>Günlük Fiyatı :</b> {{car.dailyPrice }} </p>
+            <hr>
+            <p> <b>Renk :</b> {{car.colorName}} </p>
+            <hr>
+            <a routerLink="/cars/detail/{{car.carId}}" class="btn  text-white bg-danger btn-outline-dark mt-2">Detay</a>
+          </div>
+        </div>
+  </div>
+</div>

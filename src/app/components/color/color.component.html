@@ -1,10 +1,17 @@
-
 <!-- <select class="form-select" aria-label="Default select example" style="text-align: center; background-color:rgb(128, 198, 219)">
     <option selected>Renkler</option>
     <option *ngFor="let color of colors" value="1">{{color.colorName}}</option>
   </select>
  -->
- <ul class="Renkler">
-
-  <li class="list-group-item list-group-item-info" *ngFor="let color of colors" >{{color.colorName}}</li>
+<ul class="Renkler">
+  <li
+    (click)="setCurrentColor(color)"
+    routerLink="/cars/color/{{color.id}}"
+    *ngFor="let color of colors"
+    [class]=getCurrentColor(color)
+  >
+    {{ color.colorName }}
+  </li>
 </ul>
+
+<h5  *ngIf="currentColor"> {{currentColor.colorName}} seçtiniz</h5>

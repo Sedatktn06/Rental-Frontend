@@ -18,16 +18,16 @@
   <table  class="table" > 
     <thead>
       <tr>
-        <th class="p-3 mb-2 bg-light text-dark">Şirket İsmi&nbsp;&nbsp;</th>
-        <th class="p-3 mb-2 bg-info text-dark">Müşteri İsmi&nbsp;&nbsp;</th>
-        <th class="p-3 mb-2 bg-light text-dark">Müşteri Soyismi</th>
-        <th class="p-3 mb-2 bg-info text-dark">Müşteri Mail</th>
+        <th class="p-3 mb-2 bg-dark text-white">Şirket İsmi&nbsp;&nbsp;</th>
+        <th class="p-3 mb-2 bg-dark text-white">Müşteri İsmi&nbsp;&nbsp;</th>
+        <th class="p-3 mb-2 bg-dark text-white">Müşteri Soyismi</th>
+        <th class="p-3 mb-2 bg-dark text-white">Müşteri Mail</th>
       </tr>
     </thead>
     <tr *ngFor="let customer of customers">
-      <td class="p-3 mb-2 bg-light text-dark">&nbsp;{{ customer.companyName }}</td>
-      <td class="p-3 mb-2 bg-info text-dark">&nbsp;&nbsp;{{ customer.firstName }}</td>
-      <td class="p-3 mb-2 bg-light text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ customer.lastName }}</td>
-      <td class="p-3 mb-2 bg-info text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ customer.email }}</td>
+      <td class="p-3 mb-2 bg-dark text-white">&nbsp;{{ customer.companyName }}</td>
+      <td class="p-3 mb-2 bg-dark text-white">&nbsp;&nbsp;{{ customer.firstName }}</td>
+      <td class="p-3 mb-2 bg-dark text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ customer.lastName }}</td>
+      <td class="p-3 mb-2 bg-dark text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ customer.email }}</td>
     </tr>
   </table> 

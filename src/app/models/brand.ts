@@ -1,5 +1,5 @@
 export interface Brand
 {
-    brandId:number,
+    id:number,
     brandName:string
 }

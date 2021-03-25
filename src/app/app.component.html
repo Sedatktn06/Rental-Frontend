@@ -1,25 +1,82 @@
+<!-- <div class="bg-image"
+style="background-image: url('https://st4.depositphotos.com/21230196/23953/v/950/depositphotos_239537360-stock-illustration-car-rental-icon-vector-white.jpg');
+      height: 200vh"> -->
+
+
 <div class="container">
   <app-navi></app-navi>
   <div class="row">
     <div class="col-md-3">
-      <app-brand></app-brand>
+      <div>
+        <app-brand></app-brand>
+      </div>
+      <div>
+        <app-color></app-color>
+      </div>
     </div>
     <div class="col-md-9">
-      <app-car></app-car>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-      <app-color></app-color>
-    </div>
-    <div class="col-md-9">
+      <div class="row">
+         <router-outlet></router-outlet>  
+      </div>
       <div class="row">
         <app-customer></app-customer>
       </div>
-      <div class="row">
-        <app-rental></app-rental>
-      </div>
+           <div class="row">
+             <app-rental></app-rental>
+           </div>
     </div>
   </div>
-  <router-outlet></router-outlet>
-</div>
+  <!-- <div class="row"> 
+    
+    <div class="col-md-9">
+      <div class="row">
+        
+      </div>
+      <div class="row">
+        
+      </div>
+    </div>
+   </div> 
+</div> -->
+
+<!-- <div class="bg-image"
+style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.jpg');
+      height: 100vh">
+
+ <link rel="stylesheet" href="app.component.css" /> 
+
+
+  <div class="container">
+    <app-navi></app-navi>
+
+    <div class="row">
+      <div class="col-md-2">
+        <app-brand></app-brand>
+      </div>
+
+      <div class="col-md-8">
+        <app-car></app-car> 
+        <router-outlet></router-outlet>
+      </div>
+
+      <div class="col-md-2">
+        <app-color></app-color>
+      </div>
+    </div>
+
+    
+
+    <div class="row">
+      <div class="col-md-8">
+        <app-rental></app-rental>
+      </div>
+      <div class="col-md-4">
+        <app-customer></app-customer>
+      </div>
+    </div>
+
+    
+
+    
+  </div>
+</div> -->
