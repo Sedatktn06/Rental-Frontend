@@ -17,6 +17,7 @@ export class CarComponent implements OnInit {
   default: Car; 
   carImages: CarImage[] = [];
   carImageBasePath = "https://localhost:44359";
+  filterText="";
   constructor(private carService:CarService,private activatedRoute:ActivatedRoute,private carImageService: CarImageService) {}
 
   ngOnInit(): void {

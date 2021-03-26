@@ -3,15 +3,31 @@
     <option *ngFor="let color of colors" value="1">{{color.colorName}}</option>
   </select>
  -->
+
+ <hr>
+ <div class="mb-3">
+   <input
+     type="text"
+     [(ngModel)]="filterText"
+     class="form-control bg-light text-dark"
+     id="filterText"
+     placeholder="Aramak istediğiniz rengi giriniz"
+   />
+ </div>
+ 
+ <div *ngIf="filterText" class="alert alert-warning">
+     {{filterText}} aradınız.
+ </div>
+ 
+
+
 <ul class="Renkler">
   <li
     (click)="setCurrentColor(color)"
     routerLink="/cars/color/{{color.id}}"
-    *ngFor="let color of colors"
+    *ngFor="let color of colors | filterColorPipe:filterText"
     [class]=getCurrentColor(color)
   >
     {{ color.colorName }}
   </li>
 </ul>
-
-<h5  *ngIf="currentColor"> {{currentColor.colorName}} seçtiniz</h5>

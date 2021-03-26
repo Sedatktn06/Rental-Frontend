@@ -1,6 +1,27 @@
+<hr>
+<div class="mb-3">
+  <!-- <label
+    for="filterText"
+    class="form-label bg-danger text-white form-control-lg"
+    >Marka Ara</label
+  > -->
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control bg-light text-dark"
+    id="filterText"
+    placeholder="Aramak istediğiniz marka ismini giriniz"
+  />
+</div>
+
+<div *ngIf="filterText" class="alert alert-warning">
+    {{filterText}} aradınız.
+</div>
+
+
 <ul class="Markalar">
   <li (click)="setCurrentBrand(brand)" 
-  *ngFor="let brand of brands"
+  *ngFor="let brand of brands | filterBrandPipe:filterText"
     routerLink="/cars/brand/{{brand.id}}"
    [class]="getCurrentBrand(brand)" >
     {{ brand.brandName }}

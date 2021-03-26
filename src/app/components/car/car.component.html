@@ -23,7 +23,7 @@
       </tr>
   </table>  -->
 
- <!-- <table *ngIf="dataLoaded == true" class="table" > 
+<!-- <table *ngIf="dataLoaded == true" class="table" > 
     <thead>
       <tr>
         <th class="p-3 mb-2 bg-light text-dark">Araba İsmi&nbsp;&nbsp;</th>
@@ -42,7 +42,7 @@
       <button  routerLink="/cars/car-detail/{{car.carId}}" type="button" class="btn btn-primary">Detay</button>
     </tr>
   </table>   -->
- <!--
+<!--
 <div
   *ngIf="dataLoaded == false"
   class="spinner-border text-primary"
@@ -124,24 +124,69 @@
 </div>
  -->
 
+<div class="row ml-0 mr-0">
+  <hr />
+  <div class="d-grid gap-2 d-md-block">
+    <button
+      routerLink="/cars/customer"
+      class="btn btn-danger btn-lg"
+      type="button"
+    >
+      Müşteriler
+    </button>
+    <button
+      routerLink="/cars/rental"
+      class="btn btn-danger btn-lg"
+      type="button"
+    >
+      Kiralama Bilgileri
+    </button>
+  </div>
+  <hr />
+  <div class="mb-3">
+    <label
+      for="filterText"
+      class="form-label bg-danger text-white form-control-lg"
+      >Araba Ara</label
+    >
+    <input
+      type="text"
+      [(ngModel)]="filterText"
+      class="form-control bg-light text-dark"
+      id="filterText"
+      placeholder="Aramak istediğiniz araba ismini giriniz"
+    />
+  </div>
 
- <div class="row ml-0 mr-0">
-  <div *ngFor="let car of cars " class="col-md-3 my-3">
-      <div  class="card text-white bg-dark mb-3" style="width: 100%;">
-          <img src="{{carImageBasePath}}{{getCarImage(car)}}" class="card-img-top" alt="Araba Resmi">
-          <div class="card-body">
-            <h5 class="card-title text-center">{{car.carName}}</h5>
-            <hr>
-            <p> <b>Marka :</b> {{car.brandName}} </p>
-            <hr>
-            <p> <b>Model Yılı :</b> {{car.modelYear }} </p>
-            <hr>
-            <p> <b>Günlük Fiyatı :</b> {{car.dailyPrice }} </p>
-            <hr>
-            <p> <b>Renk :</b> {{car.colorName}} </p>
-            <hr>
-            <a routerLink="/cars/detail/{{car.carId}}" class="btn  text-white bg-danger btn-outline-dark mt-2">Detay</a>
-          </div>
-        </div>
+  <div *ngIf="filterText" class="alert alert-warning">
+      {{filterText}} aradınız.
+  </div>
+
+
+  <div *ngFor="let car of cars | filterCarPipe:filterText" class="col-md-4 my-4">
+    <div class="card text-white bg-dark mb-3" style="width: 100%">
+      <img
+        src="{{ carImageBasePath }}{{ getCarImage(car) }}"
+        class="card-img-top"
+        alt="Araba Resmi"
+      />
+      <div class="card-body">
+        <h5 class="card-title text-center">{{ car.carName }}</h5>
+        <hr />
+        <p><b>Marka :</b> {{ car.brandName | uppercase }}</p>
+        <hr />
+        <p><b>Model Yılı :</b> {{ car.modelYear }}</p>
+        <hr />
+        <p><b>Günlük Fiyatı :</b> {{ car.dailyPrice }}</p>
+        <hr />
+        <p><b>Renk :</b> {{ car.colorName }}</p>
+        <hr />
+        <a
+          routerLink="/cars/detail/{{ car.carId }}"
+          class="btn text-white bg-danger btn-outline-dark mt-2"
+          >Detay</a
+        >
+      </div>
+    </div>
   </div>
 </div>

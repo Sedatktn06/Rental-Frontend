@@ -10,6 +10,7 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandComponent implements OnInit {
   currentBrand:Brand;
   brands:Brand[]=[];
+  filterText="";
 
   constructor(private brandService:BrandService) { }
 
@@ -36,5 +37,8 @@ export class BrandComponent implements OnInit {
       return "list-group-item list-group-item-secondary text-dark"
     }
   }
+
+
+  
 
 }
