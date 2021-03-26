@@ -1,0 +1,72 @@
+<!-- <hr>
+<div class="row mb-2">
+  <div class="col col-4">
+    <select *ngFor="let brand of brands" class="form-select bg-dark text-white form-select-lg" aria-label="Default select example">
+    <option selected>Markalar</option>
+    <option>{{brand.brandName}}</option>
+  </select>
+  </div>
+  <div class="col col-4">
+    <select *ngFor="let color of colors" class="form-select bg-dark text-white form-select-lg" aria-label="Default select example">
+    <option selected>Renkler</option>
+    <option >{{color.colorName}}</option>
+  </select>
+  </div>
+</div>
+<hr/>
+ -->
+
+ <div class="container bg-dark">
+    
+    <div class="row my-3 pt-3">
+        <div class="col-md-12">
+            <select 
+                    [(ngModel)]="currentBrandId"  class="form-select px-2"  >
+                <option 
+                    [ngValue]="undefined" disabled  selected> 
+                    -- select a brand -- 
+                </option>
+                <option 
+                    *ngFor="let brand of brands" 
+                    [value]="brand.id" 
+                    [selected]="setCurrentBrand(brand.id)">
+                    {{brand.brandName}}
+                </option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="row my-3">  
+        <div class="col-md-12">
+            <select 
+                    [(ngModel)]="currentColorId"  
+                    class="form-select px-2" >
+                <option 
+                    [ngValue]="undefined" disabled  selected> 
+                    -- select a color -- 
+                </option>
+                <option 
+                    *ngFor="let color of colors" 
+                    [value]="color.id" 
+                    [selected]="setCurrentColor(color.id)">
+                    {{color.colorName}}
+                </option>
+          </select>
+        </div>       
+    </div>
+    <div class="row my-3 pb-3">
+        <div class="col-md-6">
+            <button 
+            class="btn btn-secondary"
+            routerLink="/cars/car-filter/{{currentBrandId}}/{{currentColorId}}" >
+                Filter
+            </button>
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-warning"
+            routerLink="/cars">
+                Clear
+            </button>
+        </div>
+    </div>
+</div>
