@@ -124,7 +124,7 @@
 </div>
  -->
 
-<div class="row ml-0 mr-0">
+<!-- <div class="row ml-0 mr-0">
   <hr />
   <div class="d-grid gap-2 d-md-block">
     <button
@@ -181,12 +181,83 @@
         <hr />
         <p><b>Renk :</b> {{ car.colorName }}</p>
         <hr />
-        <a
-          routerLink="/cars/detail/{{ car.carId }}"
-          class="btn text-white bg-danger btn-outline-dark mt-2"
-          >Detay</a
-        >
+        <div class="card-body d-grid gap-2 col-6 mx-auto">
+          <button type="button" routerLink="/cardetail/{{ car.carId }}" class="btn btn-dark text-center" >
+            Ayrıntılar
+          </button>
+        </div>
+        
       </div>
     </div>
+  </div>
+</div> -->
+
+<div class="row ml-0 mr-0">
+  <div class="col-md-6 mt-4">
+    <div class="row">
+      
+      <div class="col-md-5">
+        <select class="form-control form-select"  [(ngModel)]="brandId" >
+          <option value="0" selected>Tüm Markalar</option>
+          <option     
+          [value]="brand.id" 
+          *ngFor="let brand of brands" >{{brand.brandName}}</option>
+
+        </select>
+      </div>
+
+      <div class="col-md-5">
+        <select 
+        (change)="classColorId(colorId)"
+        [(ngModel)]="colorId"
+        class="form-select form-control" >
+          <option value="0" selected>Tüm Renkler</option>
+          
+          <option 
+          [value]="color.id"
+          *ngFor="let color of colors" >{{color.colorName}}</option>
+
+        </select>
+      </div>
+      
+      <div class="col-md-2 btn-get">
+        <button 
+        (click)="getCarById()"
+        class="btn btn-success"
+        >Getir</button>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-6 mt-4 d-flex">
+      <input type="text" [(ngModel)]="carNameFilter" placeholder="Araba Adı Ara" class="form-control">
+      <button 
+      routerLink="/car/add"
+      class="btn btn-success"><span>+</span></button>
+  </div>
+</div>
+
+<div class="row ml-0 mr-0">
+  <div *ngFor="let car of cars | filterCarPipe:carNameFilter" class="col-md-4 my-4">
+      <div  class="card" style="width: 100%;">
+          <img src="{{carImageBasePath}}{{getCarImage(car)}}" class="card-img-top" alt="Araba Resmi">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{car.carName}}</h5>
+            <hr>
+            <p> <b>Marka :</b> {{car.brandName}} </p>
+            <hr>
+            <p> <b>Model Yılı :</b> {{car.modelYear | date:" y"}} </p>
+            <hr>
+            <p> <b>Günlük Fiyatı :</b> {{car.dailyPrice | currency:'TRY':'₺ ': '3.0'}} </p>
+            <hr>
+            <p> <b>Renk :</b> {{car.colorName}} </p>
+            <hr>
+            <span class="buton-space">
+                <a routerLink="/cars/detail/{{car.carId}}" class="btn btn-outline-dark mt-2">Detay</a>
+                <!-- <a routerLink="/rental/add/{{car.id}}" class="btn btn-outline-success mt-2">Kirala</a> -->
+              <!-- <a routerLink="/cars/update/{{car.carId}}" class="btn btn-outline-primary mt-2">Güncelle</a> -->
+            </span> 
+          </div> 
+        </div>
   </div>
 </div>

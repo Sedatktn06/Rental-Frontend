@@ -9,6 +9,7 @@ import { Color } from '../models/color';
 })
 export class ColorService {
 
+  avtiveColorId:number;
   apiUrl="https://localhost:44359/api/colors/getall";
   constructor(private htttpClient:HttpClient) { }
 
@@ -16,4 +17,9 @@ export class ColorService {
   {
       return this.htttpClient.get<ListResponseModel<Color>>(this.apiUrl);
   }
+
+  setClassColorId(id:number){
+    this.avtiveColorId = id;
+  }
+
 }

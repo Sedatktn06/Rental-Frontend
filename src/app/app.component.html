@@ -6,18 +6,15 @@ style="background-image: url('https://st4.depositphotos.com/21230196/23953/v/950
 <div class="container">
   <app-navi></app-navi>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2">
       <div>
         <app-brand></app-brand>
       </div>
       <div>
         <app-color></app-color>
       </div>
-      <div>
-        <app-car-filter></app-car-filter>
-      </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8">
       <div class="row">
         <!-- <app-car-filter></app-car-filter> -->
          <router-outlet></router-outlet>   
@@ -29,6 +26,9 @@ style="background-image: url('https://st4.depositphotos.com/21230196/23953/v/950
              <app-rental></app-rental>
            </div> -->
     </div> 
+    <div class="col-md-2" >
+      <app-car-filter></app-car-filter>
+    </div>
   </div>
   <!-- <div class="row"> 
     

@@ -1,4 +1,4 @@
-<!-- <table class="table table-info table-striped" >
+<!--  <table class="table table-info table-striped" >
     <thead>
         <tr>
           <th>Araba Markası</th>
@@ -17,26 +17,145 @@
         <td>{{ rental.rentDate }}</td>
         <td>{{ rental.returnDate }}</td>
       </tr>
-  </table> -->
-
-  <hr>
+  </table> 
+ -->
+  <!--  <hr>
   <table  class="table" > 
     <thead>
       <tr>
         <th class="p-3 mb-2 bg-dark text-white">Araba Markası&nbsp;&nbsp;</th>
-        <th class="p-3 mb-2 bg-dark text-white">Müşteri Adı&nbsp;&nbsp;</th>
-        <th class="p-3 mb-2 bg-dark text-white">Müşteri Soyadı</th>
         <th class="p-3 mb-2 bg-dark text-white">Şirket İsmi</th>
         <th class="p-3 mb-2 bg-dark text-white">Kiralama Tarihi</th>
         <th class="p-3 mb-2 bg-dark text-white">Kiralama Teslim Tarihi</th>
       </tr>
     </thead>
     <tr *ngFor="let rental of rentals">
-      <td class="p-3 mb-2 bg-dark text-white">&nbsp;{{ rental.brandName }}</td>
-      <td class="p-3 mb-2 bg-dark text-white">&nbsp;&nbsp;{{ rental.firstName }}</td>
-      <td class="p-3 mb-2 bg-dark text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rental.lastName  }}</td>
+      <td class="p-3 mb-2 bg-dark text-white">&nbsp;{{ rental.carName }}</td>
       <td class="p-3 mb-2 bg-dark text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rental.companyName  }}</td>
       <td class="p-3 mb-2 bg-dark text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rental.rentDate }}</td>
       <td class="p-3 mb-2 bg-dark text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rental.returnDate }}</td>
     </tr>
-  </table> 
+  </table>  -->
+ 
+ <!-- <div class="container justify-content-center align-items-center">
+  <div class="card mt-4 w-75">
+    <div class="card-header shadow rounded-1 text-center">
+      <h6 class="pt-2 fw-bold">İşlem Özeti</h6>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Alış Tarihi</th>
+            <th>Bırakış Tarihi</th>
+            <th>Marka</th>
+            <th>Araç</th>
+            <th>Renk</th>
+
+            <th>Günlük Ücret</th>
+            <th>Toplam</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ rental.rentDate }}</td>
+            <td>{{ rental.returnDate }}</td>
+            <td>{{ carDetail.brandName }}</td>
+            <td>{{ carDetail.carName }}</td>
+            <td>{{ carDetail.colorName }}</td>
+            <td>{{ carDetail.dailyPrice | currency: "₺" }}</td>
+            <td>
+              <strong class="text-danger">
+                {{ amountOfPayment | currency: "₺" }}
+              </strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <form> 
+          <div class="card mt-4 w-75">
+    <h5 class="pt-2 fw-bold">Ödeme İşlemleri</h5>
+    <div class="mb-3">
+      <label for="name-on-card-input" class="form-label">Kart Üzerindeki Ad Soyad</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name-on-card-input"
+        placeholder="Nurseda Yıldız"
+        required 
+      />
+    </div>
+    <div class="mb-3">
+      <label for="name-on-card-input" class="form-label">Kart Numarası</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name-on-card-input"
+        placeholder="0000-0000-0000-0000"
+        required
+      />
+    </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="expiration-date-input" class="form-label"
+          >Son Kullanma Tarihi</label
+        >
+        <div id="expiration-date-input" class="input-group">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Ay"
+            required
+          />
+          <span class="input-group-text">/</span>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Yıl"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <label for="cvv-input" class="form-label">Güvenlik(CVV)</label>
+        <input
+          id="cvv-input"
+          type="number"
+          class="form-control"
+          placeholder="000"
+          required
+        />
+      </div>
+    </div>
+
+    <button (click)="pay()" class="btn btn-primary">
+      <strong>{{ amountOfPayment | currency: "₺" }} </strong>Ödeme Yap
+    </button>
+  </div>
+  </form>
+
+</div> -->
+
+
+<table>
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Marka Adı</th>
+          <th>Ad Soyad</th>
+          <th>Kiralama Tarihi</th>
+          <th>Teslim Tarihi</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let rental of rentals">
+          <td> {{rental.rentalId}} </td>
+          <td> {{rental.rentDate}} </td>
+          <td> {{rental.returnDate}} </td>
+      </tr>
+  </tbody>
+</table>
