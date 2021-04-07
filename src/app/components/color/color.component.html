@@ -3,7 +3,16 @@
     <option *ngFor="let color of colors" value="1">{{color.colorName}}</option>
   </select>
  -->
+ <hr>
 
+ <div>
+  <ul>
+    <button 
+    routerLink="/color/add"
+    class="btn btn-danger"><span>Renk Ekle</span></button>
+  </ul>
+  
+</div>
  <hr>
  <div class="mb-3">
    <input
@@ -19,6 +28,11 @@
      {{filterText}} aradınız.
  </div>
  
+ <ul>
+  <button 
+  routerLink="/colors/color-list"
+  class="btn btn-danger"><span>Tüm Renkler-Renk Güncelle</span></button>
+</ul>
 
 
 <ul class="Renkler">

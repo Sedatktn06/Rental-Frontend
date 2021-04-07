@@ -1,0 +1,158 @@
+<!-- <div class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Araba Güncelle</h5>
+          <div class="card-body">
+            <form [formGroup]="carUpdateForm">
+              <div class="mb-3">
+                <label for="carName">Araba İsmi</label>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="carName"
+                    formControlName="carName"
+                    class="form-control"
+                    placeholder="Araba ismi"
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="brandId">Marka</label>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    id="brandId"
+                    formControlName="brandId"
+                    class="form-control"
+                    placeholder="Marka"
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="colorId">Renk</label>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    id="colorId"
+                    formControlName="colorId"
+                    class="form-control"
+                    placeholder="Renk"
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="modelYear">Araba Modeli</label>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    id="modelYear"
+                    formControlName="modelYear"
+                    class="form-control"
+                    placeholder="Araba Modeli"
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="dailyPrice">Kiralama Ücreti</label>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    id="dailyPrice"
+                    formControlName="dailyPrice"
+                    class="form-control"
+                    placeholder="Kiralama Ücreti"
+                  />
+                </div>
+              </div>
+             
+              <div class="mb-3">
+                <label for="description">Açıklama</label>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="description"
+                    formControlName="description"
+                    class="form-control"
+                    placeholder="Açıklama"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card-footer">
+              <button class="btn btn-fill btn-danger" (click)="update()">Güncelle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ -->
+
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="carUpdateForm" >
+                <div class="form-group">
+                    <label for="brandId">Araba Markası</label>
+                    <select 
+                    formControlName="brandId"               
+                    name="brandId"
+                    class="form-select form-control">
+                        <option *ngFor="let brand of brands" [value]="brand.id">{{brand.brandName}}</option>
+                      </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="colorId">Araba Rengi</label>
+                    <select 
+                    formControlName="colorId"
+                    class="form-select form-control" 
+                    name="colorId">
+                        <option [value]="color.id" *ngFor="let color of colors">{{color.colorName}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="carName">Araba Adı</label>
+                    <input 
+                    class="form-control"
+                    formControlName="carName"
+                    type="text" name="carName" >
+                </div>
+
+                <div class="form-group">
+                    <label for="modelYear">Araba Model Tarihi</label>
+                    <input 
+                    class="form-control"
+                    placeholder="Araba Model Tarihi"
+                    formControlName="modelYear"
+                    type="number" name="modelYear" >
+                </div>
+
+                <div class="form-group">
+                    <label for="dailyPrice">Günlük Kira Fiyatı</label>
+                    <input 
+                    class="form-control"
+                    formControlName="dailyPrice"
+                    type="number" name="dailyPrice" >
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Açıklama</label>
+                    <textarea 
+                    class="form-control"
+                    name="description"
+                    placeholder="Açıklama"
+                    formControlName="description"
+                    cols="30" rows="10"></textarea>
+                </div>
+
+                <button
+                class="btn btn-outline-dark"
+                (click)="update()"
+                >Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>

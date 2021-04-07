@@ -1,0 +1,30 @@
+<!-- <table class="table table-striped" >
+    <thead>
+        <tr>
+          <th>Araba Id</th>
+          <th>Marka</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let brand of brands">
+        <td>{{ brand.id }}</td>
+        <td>{{ brand.brandName }}</td>
+      </tr>
+  </table> -->
+
+  <table  class="table" > 
+    <thead>
+      <tr>
+        <th class="p-3 mb-2 bg-light text-dark">Marka Id&nbsp;&nbsp;</th>
+        <th class="p-3 mb-2 bg-light text-dark">Marka Ismi&nbsp;&nbsp;</th>
+      </tr>
+    </thead>
+    <tr 
+    *ngFor="let brand of brands"
+    >
+      <td class="p-3 mb-2 bg-light text-dark">&nbsp;{{ brand.id }}</td>
+      <td class="p-3 mb-2 bg-light text-dark">&nbsp;&nbsp;{{ brand.brandName }}</td>
+      <button 
+      routerLink="/brand/update/{{brand.id}}"
+    class="btn btn-danger"><span>Güncelle</span></button>
+    </tr>
+  </table> 

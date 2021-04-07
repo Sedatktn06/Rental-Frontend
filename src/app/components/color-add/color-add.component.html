@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="colorAddForm">
+                <div class="form-group">
+                    <label for="colorName">Resim</label>
+                    <input 
+                    class="form-control"
+                    formControlName="colorName"
+                    type="text" name="colorName" id="colorName">
+                </div>
+                <button
+                (click)="addColor()"
+                class="btn btn-dark">
+                    Ekle
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

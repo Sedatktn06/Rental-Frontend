@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="brandAddForm">
+                <div class="form-group">
+                    <label for="brandName">Marka Adı</label>
+                    <input 
+                    class="form-control"
+                    formControlName="brandName"
+                    type="text" name="brandName" id="brandName">
+                </div>
+                <button
+                (click)="addBrand()"
+                class="btn btn-dark">
+                    Ekle
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

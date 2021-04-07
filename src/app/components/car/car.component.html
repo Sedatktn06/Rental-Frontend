@@ -233,7 +233,7 @@
       <input type="text" [(ngModel)]="carNameFilter" placeholder="Araba Adı Ara" class="form-control">
       <button 
       routerLink="/car/add"
-      class="btn btn-success"><span>+</span></button>
+      class="btn btn-success"><span>Araba Ekle</span></button>
   </div>
 </div>
 
@@ -246,7 +246,7 @@
             <hr>
             <p> <b>Marka :</b> {{car.brandName}} </p>
             <hr>
-            <p> <b>Model Yılı :</b> {{car.modelYear | date:" y"}} </p>
+            <p> <b>Model Yılı :</b> {{car.modelYear }} </p>
             <hr>
             <p> <b>Günlük Fiyatı :</b> {{car.dailyPrice | currency:'TRY':'₺ ': '3.0'}} </p>
             <hr>
@@ -255,7 +255,7 @@
             <span class="buton-space">
                 <a routerLink="/cars/detail/{{car.carId}}" class="btn btn-outline-dark mt-2">Detay</a>
                 <!-- <a routerLink="/rental/add/{{car.id}}" class="btn btn-outline-success mt-2">Kirala</a> -->
-              <!-- <a routerLink="/cars/update/{{car.carId}}" class="btn btn-outline-primary mt-2">Güncelle</a> -->
+               <a routerLink="/cars/update/{{car.carId}}" class="btn btn-outline-primary mt-2">Güncelle</a> 
             </span> 
           </div> 
         </div>

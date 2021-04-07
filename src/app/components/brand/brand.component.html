@@ -1,4 +1,13 @@
 <hr>
+<div>
+  <ul>
+    <button 
+    routerLink="/brand/add"
+    class="btn btn-danger"><span>Marka Ekle</span></button>
+  </ul>
+  
+</div>
+<hr>
 <div class="mb-3">
   <!-- <label
     for="filterText"
@@ -18,6 +27,11 @@
     {{filterText}} aradınız.
 </div>
 
+<ul>
+  <button 
+  routerLink="/brands/brand-list"
+  class="btn btn-danger"><span>Tüm Markalar-Marka Güncelle</span></button>
+</ul>
 
 <ul class="Markalar">
   <li (click)="setCurrentBrand(brand)" 
@@ -26,4 +40,7 @@
    [class]="getCurrentBrand(brand)" >
     {{ brand.brandName }}
   </li>
+ <!--  <button 
+  routerLink="/brand/update/{{brand.id}}"
+  class="btn btn-outline-primary"><i class="fas fa-pencil-alt"></i></button> -->
 </ul>
