@@ -1,0 +1,27 @@
+<div class="row" style="margin-bottom: 100px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-7">
+      <form [formGroup]="userAddForm">
+        <h1>Kayıt Formu</h1>
+        <hr>
+        <label for="firstName">İsim</label>
+          <input type="text" class="form-control" formControlName="firstName" id="firstName" placeholder="İsim Giriniz">
+          <label for="lastName">Soyisim</label>
+          <input type="text" class="form-control" formControlName="lastName"  id="lastName"  placeholder="Soyisim Giriniz">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" formControlName="email"  id="email"  placeholder="Mail Adresinizi Giriniz">
+    
+        <label for="psw"><b>Şifre</b></label>
+        <input type="password" class="form-control" id="password" formControlName="password" placeholder="Şifre Giriniz">
+    
+        
+        <hr>
+        <ul>
+            <button type="submit" (click)="addUser()" class="registerbtn">Kayıt Ol</button>
+        </ul>
+    
+        
+      </form>
+      </div>
+    <div class="col-md-3"></div>
+  </div>

@@ -32,6 +32,7 @@ import { BrandListComponent } from './components/brand-list/brand-list.component
 import { ColorListComponent } from './components/color-list/color-list.component';
 import { LoginComponent } from './components/login/login.component'
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     ColorUpdateComponent,
     BrandListComponent,
     ColorListComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

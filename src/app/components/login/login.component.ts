@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private localStorageService:LocalStorageService
   ) {}
 
   ngOnInit(): void {
@@ -39,7 +41,7 @@ export class LoginComponent implements OnInit {
 
       this.authService.login(LoginModel).subscribe((response) => {
         this.toastrService.info("Giriş Yapıldı","Araba Listesine Yönlendiriliyorsunuz...");
-        localStorage.setItem("token",response.data.token);
+        this.localStorageService.setItem("token",response.data.token);
       },responseError=>{
         this.toastrService.error(responseError.error);
       });
