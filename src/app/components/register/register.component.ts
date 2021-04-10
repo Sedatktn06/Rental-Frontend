@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  user:User;
   userAddForm:FormGroup;
 
   constructor(private userService:UserService,private toastrService:ToastrService,private formBuilder:FormBuilder,private router:Router) { }
@@ -46,5 +47,7 @@ if(this.userAddForm.valid){
   this.toastrService.error("Please add valid user");
 }
   }
+
+
 
 }

@@ -5,10 +5,12 @@ import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carImage';
 import { Customer } from 'src/app/models/customer';
+import { FindeksDto } from 'src/app/models/findeks';
 import { CarService } from 'src/app/services/car.service';
 import { CarImageService } from 'src/app/services/carimage.service';
 import { CartService } from 'src/app/services/cart.service';
 import { CustomerService } from 'src/app/services/customer.service';
+import { FindeksService } from 'src/app/services/findeks.service';
 import { RentalService } from 'src/app/services/rental.service';
 
 @Component({
@@ -21,7 +23,7 @@ export class RentalAddComponent implements OnInit {
   rentalAddForm:FormGroup;
   customersDetails : Customer[];
   carDetail: Car;
-  
+  findeksDto:FindeksDto;
   rentDate: Date;
   returnDate: Date;
   totalPrice:number;
@@ -35,7 +37,8 @@ export class RentalAddComponent implements OnInit {
     private carService:CarService,
     private carImageService:CarImageService,
     private cartService:CartService,
-    private toastrService:ToastrService) { }
+    private toastrService:ToastrService,
+    private findeksService:FindeksService) { }
 
   ngOnInit(): void {
     this.createRentalAddForm();
